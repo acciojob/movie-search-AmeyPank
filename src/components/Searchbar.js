@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 
-const Searchbar = () => {
+const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState('');
 
-  const handleSearch = async () => {
+  const handleSearch = async (e) => {
+    e.preventDefault();
+
     if (searchQuery.trim() === '') {
       setError('Invalid movie name. Please try again.');
       setMovies([]);
@@ -31,14 +33,15 @@ const Searchbar = () => {
 
   return (
     <div>
-        <form>
+      <form onSubmit={handleSearch}>
         <input
-        type="text"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Enter a movie name"
-      />
-      <button onClick={handleSearch}>Search</button>
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Enter a movie name"
+        />
+        <button type="submit">Search</button>
+      </form>
       {error && <p className="error">{error}</p>}
       <ul>
         {movies.map((movie) => (
@@ -51,11 +54,8 @@ const Searchbar = () => {
           </li>
         ))}
       </ul>
-        {/* <li></li>
-      <form></form> */}
-      </form>
     </div>
   );
 };
 
-export default Searchbar;
+export default SearchBar;
