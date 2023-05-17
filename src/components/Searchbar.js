@@ -31,7 +31,8 @@ const Searchbar = () => {
 
   return (
     <div>
-      <input
+        <form>
+        <input
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
@@ -50,6 +51,8 @@ const Searchbar = () => {
           </li>
         ))}
       </ul>
+        </form>
+      
     </div>
   );
 };
