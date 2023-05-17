@@ -31,6 +31,7 @@ const Searchbar = () => {
 
   return (
     <div>
+        <form>
         <input
         type="text"
         value={searchQuery}
@@ -52,6 +53,7 @@ const Searchbar = () => {
       </ul>
         {/* <li></li>
       <form></form> */}
+      </form>
     </div>
   );
 };
