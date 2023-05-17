@@ -9,7 +9,7 @@ const SearchBar = () => {
     e.preventDefault();
 
     if (searchQuery.trim() === '') {
-      setError('Movie not found!');
+      setError('Invalid movie name. Please try again.');
       setMovies([]);
       return;
     }
@@ -26,7 +26,7 @@ const SearchBar = () => {
         setMovies(data.Search);
       }
     } catch (error) {
-      setError('An error occurred. Please try again later.');
+      setError('Invalid movie name. Please try again.');
       setMovies([]);
     }
   };
