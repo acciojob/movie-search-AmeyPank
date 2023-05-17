@@ -19,14 +19,15 @@ const SearchBar = () => {
       const data = await response.json();
 
       if (data.Response === 'False') {
-        setError(data.Error);
+
+        setError('Movie not found!');
         setMovies([]);
       } else {
         setError('');
         setMovies(data.Search);
       }
     } catch (error) {
-      setError('Invalid movie name. Please try again.');
+      setError('An error occurred. Please try again later.');
       setMovies([]);
     }
   };
