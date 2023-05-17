@@ -30,7 +30,7 @@ const Searchbar = () => {
   };
 
   return (
-    <div>
+    
         <form>
         <input
         type="text"
@@ -53,7 +53,6 @@ const Searchbar = () => {
       </ul>
         </form>
       
-    </div>
   );
 };
 
