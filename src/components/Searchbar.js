@@ -50,8 +50,8 @@ const Searchbar = () => {
           </li>
         ))}
       </ul>
-        
-      
+        <li></li>
+      <form></form>
     </div>
   );
 };
