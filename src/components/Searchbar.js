@@ -20,7 +20,7 @@ const SearchBar = () => {
 
       if (data.Response === 'False') {
 
-        setError('Movie not found!');
+        setError('Invalid movie name. Please try again.');
         setMovies([]);
       } else {
         setError('');
